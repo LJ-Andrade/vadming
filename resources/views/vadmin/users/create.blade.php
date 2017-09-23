@@ -20,6 +20,16 @@
 			<form class="form" method="POST" action="{{ route('users.store') }}">
 				{{ csrf_field() }}
 				@include('vadmin.users.form')
+				<div class="form-actions right">
+					<a href="{{ route('users.index')}}">
+						<button type="button" class="btn btnRed">
+							<i class="icon-cross2"></i> Cancelar
+						</button>
+					</a>
+					<button type="submit" class="btn btnGreen">
+						<i class="icon-check2"></i> Guardar
+					</button>
+				</div>
             </form>
 			@endslot
 		@endcomponent

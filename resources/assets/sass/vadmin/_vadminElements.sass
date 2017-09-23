@@ -22,6 +22,78 @@
 //                                  //
 //////////////////////////////////////
 
+.test-box
+	background-color: #ffffff
+	border-radius: 5px
+	padding: 10px
+	margin-bottom: 10px
+	margin-top: 10px
+
+.narrow-card
+	width: 100%
+	@include flex-center
+	.inner
+		min-width: 400px
+		@include box-shadow
+		.image
+
+			padding: 10px 5px
+			background-color: #f1f1f1
+			text-align: center
+			img
+				border-radius: 50%
+		.card-content
+			border: 1px solid #f9f9f9
+			border-top: 0
+			padding: 15px
+			width: 100%
+
+
+//////////////////////////////////////
+//                                  //
+//            SEARCH                //
+//                                  //
+//////////////////////////////////////
+
+
+// ------- FILTERS -------- //
+	
+.search-filters
+	position: relative
+	background-color: #1d2b36
+	color: #fff
+	@include box-shadow-floor-big
+	padding: 15px
+	z-index: 999
+	// display: none
+	margin-bottom: 10px
+	margin-bottom: 25px
+	label
+		font-weight: 400
+		margin: 0
+		color: #fff
+	input,select
+		margin-right: 10px
+	.hide-desk
+		display: none
+	.actionBtn
+		margin-left: 10px
+		margin-top: 20px
+	.btn-close
+		
+
+@media (max-width: 765px)
+	.search-filters
+		form
+			.form-group
+				margin-bottom: 10px
+		.actionBtn
+			margin-left: 0
+
+.search-results
+	margin-bottom: 15px
+	span
+		font-weight: 600
 //////////////////////////////////////
 //                                  //
 //             LISTS                //
@@ -29,7 +101,17 @@
 //////////////////////////////////////
 
 .list-actions
-	margin-bottom: 10px
+	margin-bottom: 15px
+	.left
+	.right
+		text-align: right
+
+@media (max-width: 765px)
+	.list-actions
+		.left
+			margin-bottom: 15px
+		.right
+			text-align: left
 
 .custom-list
 	tr
@@ -119,6 +201,34 @@ $phvFsize: 0.9rem
 .btn
 	// margin-bottom: 15px
 	@include transition(0.2s)
+	border-radius: 20px
+
+.btnSquare
+	border-radius: 5px
+
+.btnSm
+	display: inline-block
+	font-weight: normal
+	line-height: 1.25
+	text-align: center
+	white-space: nowrap
+	vertical-align: middle
+	cursor: pointer
+	user-select: none
+	border: 1px solid transparent
+	padding: 4px 12px
+	font-size: 1rem
+	border-radius: 0.18rem
+	transition: all 0.2s ease-in-out
+
+.btn-close
+	position: absolute
+	right: 5px
+	top: 5px
+	font-size: 1.5rem
+	&:hover
+		cursor: pointer
+		color: #ccc
 
 .btnGreen
 	background-color: $green

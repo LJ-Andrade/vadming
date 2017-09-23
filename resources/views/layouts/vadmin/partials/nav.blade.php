@@ -66,7 +66,7 @@
 			<li class="nav-item"><a href="#"><i class="icon-users2"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Usuarios</span></a>
 				<ul class="menu-content">
 					<li><a href="{{ route('users.index') }}" class="menu-item"><i class="icon-list"></i> Listado</a></li>
-					<li><a href="{{ route('users.create') }}" class="menu-item"><i class="icon-plus2"></i> Nuevo Usuario</a></li>
+					<li><a href="{{ route('users.create') }}" class="menu-item"><i class="icon-plus-round"></i> Nuevo Usuario</a></li>
 				</ul>
 			</li>
 

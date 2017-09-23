@@ -17,7 +17,7 @@ body {
   background-color: #fcfcfc;
   color: #383838;
   font-family: "Lato", sans-serif;
-  line-height: 25px;
+  line-height: 22px;
 }
 
 a {
@@ -27,7 +27,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #ccc;
+  color: #383838;
 }
 
 p {
@@ -200,8 +200,114 @@ hr {
   background-color: #f3f3f3;
 }
 
-.list-actions {
+.test-box {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.narrow-card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.narrow-card .inner {
+  min-width: 400px;
+  -webkit-box-shadow: 5px 2px 8px -5px rgba(0, 0, 0, 0.55);
+  box-shadow: 5px 2px 8px -5px rgba(0, 0, 0, 0.55);
+}
+
+.narrow-card .inner .image {
+  padding: 10px 5px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.narrow-card .inner .image img {
+  border-radius: 50%;
+}
+
+.narrow-card .inner .card-content {
+  border: 1px solid #f9f9f9;
+  border-top: 0;
+  padding: 15px;
+  width: 100%;
+}
+
+.search-filters {
+  position: relative;
+  background-color: #1d2b36;
+  color: #fff;
+  -webkit-box-shadow: -3px 19px 11px -14px rgba(0, 0, 0, 0.4);
+  box-shadow: -3px 19px 11px -14px rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  z-index: 999;
+  margin-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.search-filters label {
+  font-weight: 400;
+  margin: 0;
+  color: #fff;
+}
+
+.search-filters input, .search-filters select {
+  margin-right: 10px;
+}
+
+.search-filters .hide-desk {
+  display: none;
+}
+
+.search-filters .actionBtn {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 765px) {
+  .search-filters form .form-group {
+    margin-bottom: 10px;
+  }
+  .search-filters .actionBtn {
+    margin-left: 0;
+  }
+}
+
+.search-results {
+  margin-bottom: 15px;
+}
+
+.search-results span {
+  font-weight: 600;
+}
+
+.list-actions {
+  margin-bottom: 15px;
+}
+
+.list-actions .right {
+  text-align: right;
+}
+
+@media (max-width: 765px) {
+  .list-actions .left {
+    margin-bottom: 15px;
+  }
+  .list-actions .right {
+    text-align: left;
+  }
 }
 
 .custom-list tr {
@@ -301,6 +407,43 @@ hr {
 .btn {
   -webkit-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
+  border-radius: 20px;
+}
+
+.btnSquare {
+  border-radius: 5px;
+}
+
+.btnSm {
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+  padding: 4px 12px;
+  font-size: 1rem;
+  border-radius: 0.18rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 1.5rem;
+}
+
+.btn-close:hover {
+  cursor: pointer;
+  color: #ccc;
 }
 
 .btnGreen {
@@ -538,8 +681,28 @@ ul.pagination li.disabled {
   padding: 20px 0 0;
 }
 
+.custom-list thead th {
+  padding: 0.75rem 1rem;
+}
+
+.custom-list tbody th, .custom-list tbody td {
+  padding: 0.75rem 1rem;
+}
+
+.custom-list tbody th {
+  font-size: 1rem;
+}
+
+.custom-list tbody td {
+  font-size: 0.9rem;
+}
+
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: #fdfdfd;
+}
+
+.breadcrumb {
+  padding-bottom: 0;
 }
 
 .alert-success {

@@ -13,7 +13,7 @@
     </div>
     <div class="card-body collapse in">
         <div class="table-responsive">
-            <table class="table table-bordered table-striped custom-list">
+            <table id="TableList" class="table table-bordered table-striped custom-list">
                 <thead>
                     <tr>
                         {{ $tableTitles }}

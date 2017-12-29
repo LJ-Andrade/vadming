@@ -31,8 +31,8 @@
 					<li class="nav-item hidden-sm-down"><a href="#" class="nav-link nav-link-expand"><i class="ficon icon-expand2"></i></a></li>
 				</ul>
 				<ul class="nav navbar-nav float-xs-right">
-					<li class="dropdown dropdown-user nav-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="{{ asset('vadmin-ui/app-assets/images/portrait/small/avatar-s-1.png') }}" alt="avatar"><i></i></span><span class="user-name">{{ Auth::user()->name }}</span></a>
-						<div class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item"><i class="icon-head"></i> Perfil</a><a href="#" class="dropdown-item"><i class="icon-mail6"></i> My Inbox</a><a href="#" class="dropdown-item">
+					<li class="dropdown dropdown-user nav-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="{{ asset('images/users/'.Auth::user()->avatar ) }}" alt="avatar"><i></i></span><span class="user-name">{{ Auth::user()->name }}</span></a>
+						<div class="dropdown-menu dropdown-menu-right"><a href="{{ url('vadmin/users/'.Auth::user()->id) }}" class="dropdown-item"><i class="icon-head"></i> Perfil</a><a href="#" class="dropdown-item"><i class="icon-mail6"></i> My Inbox</a><a href="#" class="dropdown-item">
 							<div class="dropdown-divider"></div>
 							<a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 								<i class="icon-power3"></i> Desconectar
@@ -48,7 +48,7 @@
 	</div>
 </nav>
 
-	<!-- ////////////////////////////////////////////////////////////////////////////-->
+	<!-- //////////////////////// SIDE MENU /////////////////////////////-->
 
 
 	<!-- main menu-->
@@ -67,6 +67,25 @@
 				<ul class="menu-content">
 					<li><a href="{{ route('users.index') }}" class="menu-item"><i class="icon-list"></i> Listado</a></li>
 					<li><a href="{{ route('users.create') }}" class="menu-item"><i class="icon-plus-round"></i> Nuevo Usuario</a></li>
+				</ul>
+			</li>
+
+			<li class="nav-item has-sub"><a href="#"><i class="icon-folder-open"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Portfolio</span></a>
+				<ul class="menu-content" style="">
+					<li><a href="{{ route('portfolio.index') }}" class="menu-item"><i class="icon-list"></i> Listado</a></li>
+					<li><a href="{{ route('portfolio.create') }}" class="menu-item"><i class="icon-plus-round"></i> Nuevo Artículo</a></li>
+					<li class="has-sub is-shown"><a href="#" data-i18n="nav.menu_levels.second_level_child.main" class="menu-item">Categorías</a>
+						<ul class="menu-content" style="">
+							<li class="is-shown"><a href="#" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item"><i class="icon-list"></i> Listado</a></li>
+							<li class="is-shown"><a href="#" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item"><i class="icon-plus-round"></i> Nueva Categoría</a></li>
+						</ul>
+					</li>
+					<li class="has-sub is-shown"><a href="#" data-i18n="nav.menu_levels.second_level_child.main" class="menu-item">Etiquetas</a>
+						<ul class="menu-content" style="">
+							<li class="is-shown"><a href="#" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item"><i class="icon-list"></i> Listado</a></li>
+							<li class="is-shown"><a href="#" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item"><i class="icon-plus-round"></i> Nueva Etiqueta</a></li>
+						</ul>
+					</li>
 				</ul>
 			</li>
 

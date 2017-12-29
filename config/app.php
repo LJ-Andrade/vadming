@@ -163,6 +163,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // To send data to views (Categories, tags)
+        App\Providers\ComposerServiceProvider::class,
 
         /*
          * Package Service Providers...

@@ -30,18 +30,52 @@
 	margin-top: 10px
 
 .narrow-card
-	width: 100%
-	@include flex-center
+	max-width: 400px
+	margin-bottom: 20px
 	.inner
 		min-width: 400px
-		@include box-shadow
-		.image
+		border: 2px solid #f9f9f9
+		.card-content
+			border: 1px solid #f9f9f9
+			border-top: 0
+			padding: 15px
+			width: 100%
 
-			padding: 10px 5px
-			background-color: #f1f1f1
+.round-image-card
+	max-width: 400px
+	margin-bottom: 20px
+	.inner
+		border: 2px solid #f9f9f9
+		.image
+			position: relative
+			padding: 25px 5px
+			background-color: #f9f9f9
 			text-align: center
+			.over-text
+				position: absolute
+				width: 100%
+				left: 0
+				top: 130px
+				color: #fff
+				font-weight: 600
+				font-size: 1.2rem 
+				opacity: 0
+				@include transition(0.2s)
+			&:hover
+				.over-text
+					opacity: 1
+					pointer-events: none
 			img
 				border-radius: 50%
+				width: 230px
+				height: 230px
+				max-width: 100%
+				max-height: 100%
+				@include transition(0.2s)
+				&:hover
+					cursor: pointer
+					opacity: 0.9
+					
 		.card-content
 			border: 1px solid #f9f9f9
 			border-top: 0
@@ -114,11 +148,20 @@
 			text-align: left
 
 .custom-list
+	.row-selected
+		background-color: #fff1e8 !important
+		&:hover
+			background-color: #ece1d9 !important 
 	tr
 		@include transition(0.2s)
 		&:hover
-			background-color: rgb(202, 202, 202) !important
-
+			background-color: #ececec !important
+			.show-link a
+				color: $green
+				
+	.show-link a
+		color: $blue
+		font-weight: 600
 .list-checkbox
 	padding-left: 0 !important
 	margin-bottom: 0
@@ -352,14 +395,17 @@ $phvFsize: 0.9rem
 //                                  //
 //////////////////////////////////////
 
+ul.pagination
+	margin-top: 2px
+
 ul.pagination li
 	display: inline
-	font-size: 0.9rem
+	font-size: 1rem
 	font-weight: bold
 
 ul.pagination li a
 	padding: 8px 12px
-	margin: 4px
+	background-color: #fff
 
 ul.pagination li a
 	color: black
@@ -370,14 +416,17 @@ ul.pagination li a
 ul.pagination li a.active
 	background-color: #4CAF50
 	color: white
-	
 
 ul.pagination li.active
 	/*background-color: #4CAF50;*/
 	background-color: #1D2B36
 	padding: 8px 12px
-	margin: 4px
 	color: white
+
+ul.pagination li.disabled
+	background-color: #f9f9f9
+	&:hover	
+		cursor: not-allowed
 	
 
 /*ul.pagination li a:hover:not(.active) {background-color: #ddd;}*/
@@ -432,3 +481,27 @@ ul.pagination li.disabled
 .inner-grey-back
 	background-color: rgb(247, 247, 247)
 
+//////////////////////////////////////
+//                                  //
+//              LOGIN               //
+//                                  //
+//////////////////////////////////////
+
+.login-page
+	background-color: $dark2
+
+.login-container
+	max-width: 400px
+	margin-top: 150px
+	.card-header
+		padding: 0
+	.rememberme-box
+		margin-top: 10px
+	.card-footer
+		font-size: 0.8rem
+	fieldset
+		margin-bottom: 10px
+	input
+		margin-bottom: 5px
+	input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
+		background-color: #fff !important

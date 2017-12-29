@@ -1,4 +1,6 @@
-$nav-back: rgba(57, 57, 68,.8)
+$nav-back: #fff
+$nav-back-portfolio: #1d1729
+
 .navbar-default .navbar-toggle
     border: 0
     max-width: 100%
@@ -15,7 +17,7 @@ $nav-back: rgba(57, 57, 68,.8)
                 margin-right: 5px
                 a 
                     font-family: $font2
-                    font-weight: $f2w1
+                    font-weight: 400
                     i
                         font-family: $font1
                         margin-right: 5px
@@ -24,17 +26,25 @@ $nav-back: rgba(57, 57, 68,.8)
             height: 60px
             a
                 color: #fff
-                font-size: 1.2rem
+                font-size: 1rem
+                font-family: $font3
+                font-weight: 300
+                border-radius: 30px
+                padding: 4px 20px
                 @include transition(0.5s)
+            a.contacto
+                background-color: $light-green
+ 
             &:active,&:focus
-                color: #000
+                color: #ccc
             &:hover
-                background-color: rgba(255,255,255,.5)
                 cursor: pointer
                 a
-                    color: #000
+                    background-color: none
+                a.contacto
+                    color: #fff
         .navbar-brand
-            padding: 12px 12px
+            padding: 8px 12px
             @include transition(0.5s)
             img
                 @include transition(0.5s)
@@ -44,16 +54,23 @@ $nav-back: rgba(57, 57, 68,.8)
         background-color: transparent
         .navbar-nav > li
             a
-                color: #383838
+                color: #fff
+                font-size: 1.2rem
             &:hover
-                background-color: rgba(255,255,255,.5)
                 a
-                    color: #000
+                    border: 1px solid $light-green
+                    color: #fff
+                    
+                a.contacto
+                    background-color: $main-blue
+                    border: 0
+                    color: #fff
 
     .navbar.change-nav
-        background-color: $nav-back
+        background-color: #fff
         height: 60px
         @include transition(0.5s)
+        @include box-shadow
         // @include box-shadow-down
         .navbar-right
             border-bottom: 0
@@ -61,15 +78,14 @@ $nav-back: rgba(57, 57, 68,.8)
             @include flex-center
             height: 60px
             a
+                color: #000
+                font-size: 1.25rem
+                padding-top: 4px
+            a.contacto
                 color: #fff
-                font-size: 1.3rem
             &:active,&:focus
                 color: #fff
-            &:hover
-                background-color: rgba(255,255,255,.5)
-                cursor: pointer
-                a
-                    color: #000
+
         .navbar-brand
             @include transition(0.5s)
             img
@@ -95,22 +111,52 @@ $nav-back: rgba(57, 57, 68,.8)
 @media (max-width: 786px)
     body
         padding-top: 0
+    // Mobile hamburger menu
+    .navbar .navbar-toggle .icon-bar
+        background-color: #383838
     // Text Color
     .navbar-default .navbar-nav > li > a
-        color: #fff
+        color: #383838
         font-family: $font2
-        font-weight: $f2w1
+        font-weight: 400
+        font-size: 1.5rem
+        padding-top: 10px
+        padding-bottom: 10px
+        border: 1px solid #f9f9f9
+        border-radius: 50px
+        margin-bottom: 5px
         &:hover
-            color: #fff
+            color: #383838
+            background-color: #f9f9f9
     // UL Border
     .navbar-default .navbar-collapse, .navbar-default .navbar-form
         border: 0
     // Sandwich focus
     .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover
-        background-color: #000
+        background-color: $nav-back
     .navbar
-        background-color: rgba(0,0,0,.8)
+        background-color: $nav-back
         border: 0
         .navbar-brand
             img
                 width: 100px
+
+.nav-portfolio
+    background-color: #fff
+    border-bottom: 1px solid #ccc
+    .navbar-collapse ul li a 
+        color: #000
+    li
+        a
+            color: #fff
+            font-size: 1.2rem
+            border: 1px solid transparent
+        &:hover
+            a
+                border: 1px solid $light-green
+                color: #fff
+                
+            a.contacto
+                background-color: $main-blue
+                border: 0
+                color: #fff

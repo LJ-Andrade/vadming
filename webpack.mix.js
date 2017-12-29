@@ -14,16 +14,24 @@ let mix = require('laravel-mix');
 // mix.js('resources/assets/js/app.js', 'public/js')
 //    .sass('resources/assets/sass/app.scss', 'public/css');
 
+// Web
+
+mix.js('resources/assets/js/web/web.js', 'public/js')
+.sass('resources/assets/sass/web.scss', 'public/css')
+.options({
+    processCssUrls: false
+});
+
+mix.sass('resources/assets/sass/web/web.sass', 'public/css')
+.options({
+    processCssUrls: false
+});
+
+// Vadmin 
 mix.js('resources/assets/js/vadmin-ui.js', 'public/js');
 mix.js('resources/assets/js/vadmin-functions.js', 'public/js');
 
-
 mix.sass('resources/assets/sass/vadmin/vadmin.sass', 'public/css')
-   .options({
-       processCssUrls: false
-   });
-   
-mix.sass('resources/assets/sass/web/web.sass', 'public/css')
    .options({
        processCssUrls: false
    });

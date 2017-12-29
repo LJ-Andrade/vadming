@@ -2,28 +2,42 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Scope;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name', 'username', 'email', 'password', 'role', 'group', 'avatar'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // Search Scopes 
+    public function scopeSearchname($query, $name)
+    {
+        $query->where('name', 'LIKE', "%$name%")
+            ->orWhere('username', 'LIKE', "%$name%")
+            ->orWhere('email', 'LIKE', "%$name%");
+    }
+
+    public function scopeSearchrole($query, $role)
+    {
+        $query->where('role', $role);
+    }
+
+    public function scopeSearchgroup($query, $group)
+    {
+        $query->where('group', $group);
+    }
+
+    public function scopeSearchrolegroup($query, $role, $group)
+    {
+        $query->where('role', $role)->where('group', $group);
+    }
+
+    
+
 }

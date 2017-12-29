@@ -8,6 +8,7 @@
 		<meta name="keywords" content="">
 		<meta name="author" content="Studio Vimana">
 		<title>@yield('title')</title>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="apple-touch-icon" sizes="60x60" href="{{ asset('vadmin-ui/app-assets/images/ico/apple-icon-60.png') }}">
 		<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('vadmin-ui/app-assets/images/ico/apple-icon-76.png') }}">
 		<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('vadmin-ui/app-assets/images/ico/apple-icon-120.png') }}">
@@ -37,6 +38,7 @@
 		<!-- BEGIN Custom CSS-->
 		<link rel="stylesheet" type="text/css" href="{{ asset('vadmin-ui/assets/css/style.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/vadmin.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('plugins/sweetalert/sweetalert2.min.css') }}">
 		<!-- END Custom CSS-->
 		@yield('styles')
 	</head>
@@ -97,7 +99,8 @@
 		<script src="{{ asset('vadmin-ui/app-assets/js/core/app.js') }}" type="text/javascript"></script>
 		<!-- END ROBUST JS-->
 		<!-- BEGIN PAGE LEVEL JS-->
-		<script src="{{ asset('vadmin-ui/app-assets/js/scripts/pages/dashboard-lite.js') }}" type="text/javascript"></script>
+		{{-- <script src="{{ asset('vadmin-ui/app-assets/js/scripts/pages/dashboard-lite.js') }}" type="text/javascript"></script> --}}
+		<script src="{{ asset('plugins/sweetalert/sweetalert2.min.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('js/vadmin-ui.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('js/vadmin-functions.js') }}" type="text/javascript"></script>
 		<!-- END PAGE LEVEL JS-->

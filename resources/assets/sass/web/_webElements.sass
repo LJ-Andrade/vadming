@@ -1,21 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Kadwa:400,700|Roboto:300,400,700')
-$font1: 'Kadwa', serif
-$f1w1: 400
-$f1w2: 700
-$font2: 'Roboto', sans-serif
-$f2w1: 300
-$f2w2: 400
-$f2w3: 700
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Lato:300,400|Nixie+One')
+$font1: 'Nixie One', cursive
+$font2: 'Josefin Slab', serif
+$font3: 'Lato', sans-serif
 
-
+$back-color: #0d1d41
+$back-color2: #01406b
 $main-red: #D77777
 $main-color: #F3F3F3
+$main-blue: #3356e3
 $color3: #393944
 $color3Hover: #58586A
+$light-green: #03c3ad
+$light-green2: #1ad4be
 
 
 $red1: rgb(235, 87, 87)
-
 
 .productwrap
 	width: 78%
@@ -29,17 +28,12 @@ $red1: rgb(235, 87, 87)
 	padding: 10px 0
 	margin: 10px 0
 
-
-
 .divider
 	margin: 0 5px
 
 @media (max-width: 475px)
 	.dividernodisplay
 		display: none
-
-
-
 
 //////////////////////////////////////
 //                                  //
@@ -164,6 +158,32 @@ $red1: rgb(235, 87, 87)
 		background-color: #fff
 		color: #000
 
+.btnHollowGreyTrans
+	background-color: transparent
+	border: 1px solid $light-green2
+	color: #fff
+	&:hover
+		background-color: #fff
+		color: #383838
+
+.btnHollowGreyTransBlack
+	background-color: transparent
+	border: 1px solid $light-green2
+	color: $light-green2
+	&:hover
+		background-color: $light-green2
+		color: #383838
+
+
+.btnHollowGreen
+	background-color: $light-green2
+	border: 1px solid #ccc
+	color: #fff
+	&:hover
+		background-color: #fff
+		color: #383838
+
+
 .btnHollowB
 	padding: 15px 25px
 	border: 2px solid $red1
@@ -196,30 +216,6 @@ $red1: rgb(235, 87, 87)
 	a
 		color: black
 
-.btnHollowPortfolio
-	background-color: transparent
-	border: 1px solid $color3
-	color: $color3
-	position: relative
-	i
-		position: absolute
-		color: $color3
-		font-size: 3rem
-		right: -6px
-		top: -1px
-		@include transition(0.2s)
-	&:hover
-		background-color: $red1
-		border: 0
-		color: #fff
-		padding-right: 55px
-		i
-			color: $red1
-			font-size: 5rem
-			right: -23px
-			top: -19px
-		
-
 //////////////////////////////////////
 //                                  //
 //             TAGS                 //
@@ -235,7 +231,7 @@ $red1: rgb(235, 87, 87)
 	white-space: nowrap
 	font-size: 1.2rem
 	font-family: $font2
-	font-weight: $f2w1
+	font-weight: 400
 	@include transition(0.4s)
 
 .blue-tag
@@ -257,7 +253,7 @@ $red1: rgb(235, 87, 87)
 	color: #fff
 	font-size: 1.1rem
 	font-family: $font2
-	font-weight: $f2w1
+	font-weight: 400
 	@include transition(0.2s)
 	margin-left: 2px
 	a
@@ -274,7 +270,7 @@ $red1: rgb(235, 87, 87)
 	background-color: #F8F8F8
 	font-size: 1.2rem
 	font-family: $font2
-	font-weight: $f2w1
+	font-weight: 400
 	@include transition(0.2s)
 	margin-left: 2px
 	a
@@ -285,12 +281,33 @@ $red1: rgb(235, 87, 87)
 		a
 			color: #7D7D7D
 
+.badgeHollow
+	background-color: transparent
+	border: 1px solid $light-green
+	font-size: 1rem
+	font-family: $font2
+	font-weight: 400
+	@include transition(0.2s)
+	margin-left: 2px
+	padding: 4px 8px
+	border-radius: 26px
+	color: #383838
+	a
+		color: #fff
+	&:hover
+		background-color: $light-green
+		cursor: pointer
+		color: #fff
+		a
+			color: #fff
+
+
 
 .sqbadge-red
 	border-radius: 0
 	font-size: 1.2rem
 	font-family: $font2
-	font-weight: $f2w1
+	font-weight: 400
 	margin: 3px 1px
 	@include transition(0.2s)
 	margin-left: 2px
@@ -361,7 +378,8 @@ $red1: rgb(235, 87, 87)
 	z-index: 2
 	position: relative
 
-
+.softhr
+    border-top: 1px solid rgba(238, 238, 238, 0.48)
 
 
 //////////// Section Banners //////////////////////
@@ -756,8 +774,13 @@ $red1: rgb(235, 87, 87)
 		background-image: none
 		font-size: 2rem
 		opacity: 0
+		i
+			font-weight: 400
+			color: blue
 	.swiper-scrollbar
 		display: none
+	img
+		max-width: 100%
 	&:hover
 		.swiper-button-prev,.swiper-button-next
 			opacity: 1
